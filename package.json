@@ -1,0 +1,26 @@
+{
+  "name": "strapi-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run migate:rollback && npm run migrate && npm run seed && npm run local",
+    "migate:rollback": "knex migrate:rollback",
+    "migrate": "knex migrate:latest",
+    "seed": "knex seed:run",
+    "local": "nodemon src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-koa": "^3.7.0",
+    "dotenv": "^16.0.0",
+    "graphql": "^16.4.0",
+    "knex": "^2.0.0",
+    "koa": "^2.13.4",
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
